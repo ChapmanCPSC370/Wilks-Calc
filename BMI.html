@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	<h1>Welcome to my powerlifting and fitness calculators</h1>
+	
+<h1> Click the buttons below to start</h1>
+
+<button onclick="startBMI_Calculator()">Click here for the BMI Calculator</button>
+
+<p id="demo"></p>
+
+<script>
+	function startBMI_Calculator()
+	{
+
+		var weight_lbs = parseFloat(prompt("What is your weight in pounds?"));
+		var weight_kg = parseFloat(weight_lbs * 56.25);
+		var height_IN = parseFloat(prompt("How tall are you in inches"));
+		var height_M = parseFloat(height_IN * .025);
+		var height_M_squared = parseFloat(Math.pow(height_M,2));
+
+		var BMI = parseFloat(weight_kg/height_M_squared);
+
+		var message2 = "The BMI for a person who is " + height_IN + " tall and weights " + weight_lbs " pounds is " + BMI;
+		alert(message2);
+
+	}
+</script>
+</body>
+
+</html>
