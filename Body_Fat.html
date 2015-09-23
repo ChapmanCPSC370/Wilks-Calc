@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	
+	<h1>Welcome to my powerlifting and fitness calculators</h1>
+	
+<h1> Click the buttons below to start</h1>
+
+<button onclick="startBD_fat_Calculator()">Click here for the Body Fat Calculator</button>
+
+<p id="demo"></p>
+
+<script>
+	function startBD_fat_Calculator()
+	{
+		var gender = (prompt("Is the lifter male or female? (enter M or F)");
+		var male = "M";
+		var female = "F";
+		var height = parseFloat(prompt("How tall are you, in inches?"));
+		var neck = parseFloat(prompt("What is the circumferance of your neck in inches?"));
+		var waist = parseFloat(prompt("What is the circumferance of your waist in inches?"));
+		var BD_fat;
+
+		if(gender.localeCompare(male) == 0)
+		{
+			BD_fat = parseFloat((495)/(1.0324-0.19077*(Math.log(waist-neck))+.15456*Math.log(height)) -(450));
+			 
+		}
+		else if (gender.localeCompare(female) == 0) 
+		{
+			var hip = parseFloat(prompt("What is the circumferance of your hips in inches?"));
+			BD_fat = parseFloat((495)/(1.29579-0.35004*(Math.log((waist+hip)-neck))+.221 *Math.log(height)) -(450));
+			
+		}
+		else
+		{
+			document.write("Please try again!");
+		}
+
+
+		var message3 = "Your body fat percentage is: " + BD_fat;
+		alert(message3);
+
+	}
+</script>
+</body>
+
+</html>
